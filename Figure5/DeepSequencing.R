@@ -155,3 +155,14 @@ dev.off()
 save(object = plot_P0557, file = "~/Projects/hypermutated_ALL/ANALYSES/MutationalTiming/P0557_deepseq_significance.rdata")
 save(object = plot_P0608, file = "~/Projects/hypermutated_ALL/ANALYSES/MutationalTiming/P0608_deepseq_significance.rdata")
 save(object = plot_P0611, file = "~/Projects/hypermutated_ALL/ANALYSES/MutationalTiming/P0611_deepseq_significance.rdata")
+
+#Perform tests
+wilcox.test(P0608_only_alt_AF$alt_AF_P0608Dx,
+            c(P0608_only_alt_AF$alt_AF_P0557Dx,
+              P0608_only_alt_AF$alt_AF_P0611Dx))
+wilcox.test(P0557_only_alt_AF$alt_AF_P0557Dx,
+            c(P0557_only_alt_AF$alt_AF_P0608Dx,
+              P0557_only_alt_AF$alt_AF_P0611Dx))
+wilcox.test(P0611_only_alt_AF$alt_AF_P0611Dx,
+            c(P0611_only_alt_AF$alt_AF_P0557Dx,
+              P0611_only_alt_AF$alt_AF_P0608Dx))

@@ -66,3 +66,9 @@ mut_loads_selected$mutational_load[mut_loads_selected$dataset == "SBS7a-positive
 mut_loads_selected$mutational_load[mut_loads_selected$dataset == "SBS7a-positive ALCL"] %>% mean() -> mean_ALCL
 mean_ALL_UV / mean_ALL_no_UV
 mean_Skin / mean_ALL_UV
+
+#Statistical test
+wilcox.test(mut_loads_selected$mutational_load[mut_loads_selected$dataset == "SBS7a-positive BCP-ALL"],
+            mut_loads_selected$mutational_load[mut_loads_selected$dataset == "SBS7a-positive Skin Cancer"])
+wilcox.test(mut_loads_selected$mutational_load[mut_loads_selected$dataset == "SBS7a-positive BCP-ALL"],
+            mut_loads_selected$mutational_load[mut_loads_selected$dataset == "SBS7a-negative BCP-ALL"])

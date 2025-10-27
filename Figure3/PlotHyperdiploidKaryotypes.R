@@ -97,7 +97,7 @@ ggplot(anno) +
                             "SBS7aPositive" = "SBS7a-positive"))
 ggsave("~/surfdrive/Shared/Kuiper group/Relapsed_ALL/ANALYSES/SBS7a/RESULTS/Figures/CNAcomparison/MoormanPrognosis.pdf",
        width = 3, height = 4, units = "in")
-
+fisher.test(anno$SBS7aStatus, anno$Moorman)
 
 #Plot percentage gained per chromosome -----------------------------------------
 #Get percentage gained per SBS7a status

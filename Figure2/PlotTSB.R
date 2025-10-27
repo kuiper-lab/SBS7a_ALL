@@ -65,7 +65,7 @@ TSB_plot <- ggplot(combined_CT, aes(x = TumorType, y = ratio, fill = TumorType))
 save(object = TSB_plot, file = "~/Projects/hypermutated_ALL/ANALYSES/melanoma_comparison/TranscriptionalStrandBias/TSB_plot.rdata")
 TSB_plot_logtransformed <- ggplot(combined_CT, aes(x = TumorType, y = log2(ratio), fill = TumorType)) +
   geom_boxplot() +
-  labs(y = "2log(Transcribed / Untranscribed)") +
+  labs(y = expression(log[2](Transcribed / Untranscribed))) +
   theme_light() +
   geom_signif(comparisons = list(c("SBS7a-positive BCP-ALL", "SBS7a-positive Skin Cancer"),
                                  c("SBS7a-positive BCP-ALL", "SBS7a-positive ALCL"),
@@ -81,7 +81,8 @@ TSB_plot_logtransformed <- ggplot(combined_CT, aes(x = TumorType, y = log2(ratio
   theme(axis.text.x = element_text(angle = 315, vjust = 0.5, hjust=0))
 save(object = TSB_plot_logtransformed, file = "~/Projects/hypermutated_ALL/ANALYSES/melanoma_comparison/TranscriptionalStrandBias/TSB_logtransformed_plot.rdata")
 
-
-
-
-
+#Perform statistical analysis
+wilcox.test(log2(combined_CT$ratio[combined_CT$TumorType == "SBS7a-positive BCP-ALL"]),
+            log2(combined_CT$ratio[combined_CT$TumorType == "SBS7a-negative BCP-ALL"]))
+wilcox.test(log2(combined_CT$ratio[combined_CT$TumorType == "SBS7a-positive BCP-ALL"]),
+            log2(combined_CT$ratio[combined_CT$TumorType == "SBS7a-positive Skin Cancer"]))

@@ -201,3 +201,7 @@ ggplot(coverage_df, aes(x = SBS7aStatus, y = mean_coverage, fill = SBS7aStatus))
               test = "wilcox.test")
 ggsave("~/Projects/hypermutated_ALL/ANALYSES/cnvAnalysis/iAMP21/Region_Coverage_Combined.pdf",
        width = 10, height = 5, units = "in")
+wilcox.test(mean_coverage ~ SBS7aStatus,
+            data = coverage_df[coverage_df$region == "1",])
+wilcox.test(mean_coverage ~ SBS7aStatus,
+            data = coverage_df[coverage_df$region == "2",])

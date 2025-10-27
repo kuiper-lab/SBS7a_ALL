@@ -82,3 +82,7 @@ wilcox.test(CT_CCTT_df_selected$ratio[CT_CCTT_df_selected$dataset == "SBS7a-posi
 CT_CCTT_df_selected %>%
   group_by(dataset) %>%
   summarise(avg=mean(ratio))
+
+#Perform statistical test on number of CC>TT mutations
+wilcox.test(CT_CCTT_df_selected$CCTT[CT_CCTT_df_selected$dataset == "SBS7a-positive BCP-ALL"],
+            CT_CCTT_df_selected$CCTT[CT_CCTT_df_selected$dataset == "SBS7a-positive Skin Cancer"])
