@@ -12,13 +12,13 @@ This directory contains code for the calculation and visualization of tumor muta
 This directory contains code to plot karyotypes, compare prognosis based on karyotype, and study copy number alterations of chromosome 21 in more detail.
 
 ## Figure 4
-This directory contains code to identify subclonal mutations and extract mutational signatures from these mutations. These scripts are also used for the generation of supplementary figures S4 and S5.
+This directory contains code to identify subclonal mutations and extract mutational signatures from these mutations. These scripts are also used for the generation of supplementary figures S6 and S7.
 
 ## Figure 5
 This directory contains code to study acquired mutations, analyse deep sequencing data and generate fishplots.
 
 ## Figure 6
-This directory contains code to analyse single-cell whole genome sequencing data and generate the lineage tree for patient P0624. These scripts are also used for the generation of supplementary figures S6 and S7.
+This directory contains code to analyse single-cell whole genome sequencing data and generate the lineage tree for patient P0625. These scripts are also used for the generation of supplementary figures S9 and S10.
 
 ## Figure S1
 This directory contains code to analyse and visualize the expression of genes in the nucleotide excision repair pathway.
@@ -27,10 +27,16 @@ This directory contains code to analyse and visualize the expression of genes in
 This directory contains code to perform differential expression analysis and generate volcano plots.
 
 ## Figure S3
+This directory contains code to analyse differences in transcription between BCP-ALL subtypes.
+
+## Figure S5
 This directory contains code to study the timing of SBS7a compared to amplifications of chromosome 21.
 
-## Figure S6
-This directory contains code to analyse single-cell whole genome sequencing data and generate the lineage tree for patient P0625. This script is also used for the generation of supplementary figure  S7.
+## Figure S8
+This directory contains code to find pathogenic driver genes and calculate the probability that they were caused by SBS7a.
+
+## Figure S10
+This directory contains code to analyse single-cell whole genome sequencing data and generate the lineage tree for patient P0624. This script is also used for the generation of supplementary figure  S9.
 
 ## Table 1
 This directory contains code to study the presence of SBS7a in a pan-cancer cohort.
