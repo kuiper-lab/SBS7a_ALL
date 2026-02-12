@@ -1,17 +1,11 @@
-# Supplementary Figure S3
-This directory contains code to study the timing of SBS7a compared to amplifications of chromosome 21. CNAs were called according to GATK best practices, using GATK v4.1.7.0 and an in-house panel of normals.
+# Figure S3
+This directory contains code to analyse differences in transcription between BCP-ALL subtypes, in this case comparing aneuploid BCP-ALL (iamp21 and high hyperdiploid) to ETV6::RUNX1 BCP-ALL.
 
-## FilterCNACalls.R
-This script can be used to extract only CNAs from segment files generated with GATK.
+## iAMP21vsETV6RUNX1.R and HyperdiploidvsETV6RUNX1.R
+These scripts use RNAseq data from 58 cases of ETV6::RUNX1 BCP-ALL and either 10 cases of iAMP21 of 72 cases of high hyperdiploid BCP-ALL to find differentially expressed genes and gene sets.
 
-## FilterVcfsForCNAAnalysis.R
-This script filters somatic SBS vcfs generated with Mutect2 from GATK v4.1.1.0 in a similar way as for the other analyses, but keeps mutations with an allele frequency of at least 0.1.
+## GetIntersectiAMP21Hyperdiploid.R
+This script finds overlapping genes and gene sets which are differentially expressed in iAMP21 and high hyperdiploid BCP-ALL compared to ETV6::RUNX1 BCP-ALL. It performs over-representation analysis on the differentially expressed genes and plots these (Figure S4).
 
-## GetSomaticGainedSBSs.R
-This script selects somatic mutations from the filtered vcf which overlap with an amplification of chromosome 21, using the output from FilterCNACalls.R and FilterVcfsForCNAAnalysis.R.
-
-## GetGermlineGainedSBSs.R
-This script selects germline variants which are heterozygous in the germline (allele frequency between 0.25 and 0.75) and present in the tumor (allele frequency of at least 0.1). From these variants it selects the ones which overlap with amplifications of chromosome 21. It used the output from FilterCNACalls.R and GATK HaplotypeCaller.
-
-## MakeSNVCNATimingPlot.R
-This script can be used to plot the allele frequency of germline and somatic mutations to study the timing of SBS7a compared to amplifications of chromosome 21 (Supplementary Figure S3). It used the output from GetSomaticGainedSBSs.R and GetGermlineGainedSBSs.R.
+## GSEA_aneuploidvsfusiondriven.R
+This script performs differential expression analysis and gene set enrichment analysis comparing iAMP21 and high hyperdiploid BCP-ALL to ETV6::RUNX1 BCP-ALL, to make plots of the overlapping gene sets identified with GetIntersectiAMP21Hyperdiploid.R.
